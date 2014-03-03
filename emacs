@@ -54,6 +54,9 @@ print a message in the minibuffer with the result."
 	(setq count (1+ count)))
       (message "Buffer contains %d words." count))))
 
+;; Bind Menu key to be the same as M-x
+(global-set-key (kbd "<menu>") 'execute-extended-command)
+
 
 ;; Aliases
 (defalias 'fm 'flyspell-mode) ;; toggles flyspell mode
