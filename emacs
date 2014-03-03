@@ -2,7 +2,6 @@
 ;;
 ;; This is going to be a perpetual work in progress!!! 
 ;;
-;; Got a lot of this from ergoemacs.org -- thanks!
 
 ;; Start in daemon mode.
 (server-start)
@@ -42,6 +41,7 @@
 ;;(calendar)
 
 ;; Word count function
+;; Stole this from some forum.. Was useful a few times
 (defun count-words-buffer ( )
   "Count the number of words in current buffer;
 print a message in the minibuffer with the result."
@@ -53,4 +53,8 @@ print a message in the minibuffer with the result."
 	(forward-word 1)
 	(setq count (1+ count)))
       (message "Buffer contains %d words." count))))
+
+
+;; Aliases
+(defalias 'fm 'flyspell-mode) ;; toggles flyspell mode
 
