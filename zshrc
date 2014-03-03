@@ -90,3 +90,4 @@ alias win2unix="sed 's/\r//'"
 # Command aliases
 alias teamviewer="/opt/teamviewer9/tv_bin/TeamViewer"
 alias ipinfo="curl ipinfo.io"
+alias ack="ack-grep"
