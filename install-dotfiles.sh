@@ -8,7 +8,7 @@
 # TODO: Add more error checking.
 
 OLDDIR="$HOME/.dotfiles-backup"
-DOTFILES="emacs muttrc vimrc xbindkeysrc Xresources"
+DOTFILES="zshrc emacs muttrc vimrc xbindkeysrc Xresources"
 
 echo "Installing Daniel Roberson's dotfiles."
 echo
