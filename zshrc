@@ -46,6 +46,11 @@ program_exists () {
     type "$1" >/dev/null ;
 }
 
+# Checks if we have GNU grep
+have_gnu_grep () {
+    grep -V 2>&1 >/dev/null |grep GNU
+}
+
 # Control+X inserts "sudo" at start of line
 insert_sudo () {
     [[ -z $BUFFER ]] && zle up-history
@@ -65,12 +70,15 @@ bindkey "^X" insert-sudo
 #zcalco () { print $(( [#8] ans = ${@:-ans} )) }
 #zcalcb () { print $(( [#2] ans = ${@:-ans} )) }
 
-# I like colors!
-alias ls="ls --color"
-alias grep="grep --color"
-alias lgrep="lgrep --color"
-alias fgrep="fgrep --color"
-alias rgrep="rgrep --color"
+# I like colorful grep!
+# OpenBSD doesn't have GNU grep by default, so had to add check
+if have_gnu_grep; then
+    alias ls="ls --color"
+    alias grep="grep --color"
+    alias lgrep="lgrep --color"
+    alias fgrep="fgrep --color"
+    alias rgrep="rgrep --color"
+fi
 
 # Surfraw aliases!
 if program_exists sr; then
