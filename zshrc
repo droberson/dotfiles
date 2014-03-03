@@ -87,8 +87,6 @@ fi
 alias unix2win="sed 's/$/`echo \\\r`/'"
 alias win2unix="sed 's/\r//'"
 
-# Cameras
-alias camerafront='vlc "rtsp://192.168.233.112/img/video.sav?channel=3"'
-
 # Command aliases
-alias teamviewer=/opt/teamviewer9/tv_bin/TeamViewer
+alias teamviewer="/opt/teamviewer9/tv_bin/TeamViewer"
+alias ipinfo="curl ipinfo.io"
