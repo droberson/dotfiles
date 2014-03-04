@@ -57,6 +57,10 @@ print a message in the minibuffer with the result."
 ;; Bind Menu key to be the same as M-x
 (global-set-key (kbd "<menu>") 'execute-extended-command)
 
+;; Display line and column numbers
+(setq-default line-number-mode 't)
+(setq-default column-number-mode 't)
+
 
 ;; Aliases
 (defalias 'fm 'flyspell-mode) ;; toggles flyspell mode

@@ -48,7 +48,14 @@ program_exists () {
 
 # Checks if we have GNU grep
 have_gnu_grep () {
-    grep -V 2>&1 >/dev/null |grep GNU
+    grep -V 2>&1 |grep GNU >/dev/null ;
+    return $?
+}
+
+# Check if we have GNU ls
+have_gnu_ls () {
+    ls --help >/dev/null 2>/dev/null ;
+    return $?
 }
 
 # Control+X inserts "sudo" at start of line
@@ -72,7 +79,7 @@ bindkey "^X" insert-sudo
 
 # I like colorful grep!
 # OpenBSD doesn't have GNU grep by default, so had to add check
-if have_gnu_grep; then
+if  [ `uname` = "Linux" ]; then
     alias ls="ls --color"
     alias grep="grep --color"
     alias lgrep="lgrep --color"
@@ -96,6 +103,8 @@ alias unix2win="sed 's/$/`echo \\\r`/'"
 alias win2unix="sed 's/\r//'"
 
 # Command aliases
-alias teamviewer="/opt/teamviewer9/tv_bin/TeamViewer"
+if [ -x "/opt/teamviewer9/tv_bin/TeamViewer" ]; then
+    alias teamviewer="/opt/teamviewer9/tv_bin/TeamViewer"
+fi
 alias ipinfo="curl ipinfo.io"
 alias ack="ack-grep"
