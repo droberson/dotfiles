@@ -8,7 +8,7 @@
 # TODO: Add more error checking.
 
 OLDDIR="$HOME/.dotfiles-backup"
-DOTFILES="zshrc kshrc emacs muttrc vimrc xbindkeysrc Xresources"
+DOTFILES="profile zshrc kshrc emacs muttrc vimrc xbindkeysrc Xresources"
 
 echo "Installing Daniel Roberson's dotfiles."
 echo
@@ -45,7 +45,7 @@ for file in $DOTFILES; do
 	    echo $HOME/.$file is a symbolic link. Skipping.
 	else
 	    echo "Backing up $file.."
-	    mv $HOME/.$file $OLDDIR
+	    mv $HOME/.$file $OLDDIR/$file
 	    echo $HOME/.$file $OLDDIR
 	    echo "Installing symbolic link for $file"
 	    ln -s $PWD/$file $HOME/.$file
