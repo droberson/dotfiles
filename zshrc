@@ -78,9 +78,12 @@ bindkey "^X" insert-sudo
 #zcalcb () { print $(( [#2] ans = ${@:-ans} )) }
 
 # I like colorful grep!
-# OpenBSD doesn't have GNU grep by default, so had to add check
-if  [ `uname` = "Linux" ]; then
+# OpenBSD doesn't have GNU grep by default, so had to add checks
+if have_gnu_ls; then
     alias ls="ls --color"
+fi
+
+if have_gnu_grep; then
     alias grep="grep --color"
     alias lgrep="lgrep --color"
     alias fgrep="fgrep --color"
