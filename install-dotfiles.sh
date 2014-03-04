@@ -37,16 +37,24 @@ else
     echo "Success."
 fi
 
-# Back up old dotfiles
+# Back up old dotfiles and install symbolic links
 for file in $DOTFILES; do
-    echo "Backing up $file"
-    mv $HOME/.$file $OLDDIR
-done
-
-# Create symlinks.
-for file in $DOTFILES; do
-    echo "Installing symlink for $file"
-    ln -s $PWD/$file $HOME/.$file
+    if [ -f $HOME/.$file ]; then
+	# Dotfile exists. make a backup.
+	if [ -h $HOME/.$file ]; then
+	    echo $HOME/.$file is a symbolic link. Skipping.
+	else
+	    echo "Backing up $file.."
+	    mv $HOME/.$file $OLDDIR
+	    echo $HOME/.$file $OLDDIR
+	    echo "Installing symbolic link for $file"
+	    ln -s $PWD/$file $HOME/.$file
+	fi
+    else
+	# Symbolic link and dotfile do not exist, Create link.
+	echo "Installing symbolic link for $file"
+	ln -s $PWD/$file $HOME/.$file
+    fi
 done
 
 echo "Done."
