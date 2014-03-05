@@ -24,8 +24,10 @@ if [ -d "$OLDDIR" ]; then
     else
 	echo "no."
 	echo "Failure. Ensure that $OLDDIR is writable and try again."
+	exit 1
     fi
 else
+    # Backup directory does not exist. Attempt to create it.
     echo "no.. Attempting to create."
 
     mkdir $OLDDIR
