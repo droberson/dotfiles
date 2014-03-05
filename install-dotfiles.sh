@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # install-dotfiles.sh -- Creates symlinks to dotfiles contained in
 #                     -- this repo. Additionally backs up old ones
