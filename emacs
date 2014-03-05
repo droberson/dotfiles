@@ -31,7 +31,12 @@
 (setq org-log-done 'time)      ;; Timestamp on completion (C-c C-t)
 
 ;; Set default terminal
-(setq explicit-shell-file-name "/usr/bin/zsh")
+(if (eq system-type 'gnu/linux)
+    (setq explicit-shell-file-name "/usr/bin/zsh")
+)
+(if (eq system-type 'berkeley-unix)
+    (setq explicit-shell-file-name "/usr/local/bin/zsh")
+)
 
 ;; File name associations
 (add-to-list 'auto-mode-alist '("\\.elvi\\'" . sh-mode))  ;; Surfraw elvis
