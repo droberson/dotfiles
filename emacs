@@ -15,7 +15,7 @@
 (setq inhibit-startup-message t)
 
 ;; Stop to show toolbar
-(tool-bar-mode -1)
+(if window-system (tool-bar-mode -1))
 
 ;; Color settings
 (set-foreground-color "gray")
