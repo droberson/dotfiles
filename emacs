@@ -4,7 +4,18 @@
 ;;
 
 ;; Start in daemon mode.
-(server-start)
+(require 'server)
+(unless (server-running-p)
+  (server-start))
+
+;; Type y or n instead of yes or no
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; Stop to show startup message
+(setq inhibit-startup-message t)
+
+;; Stop to show toolbar
+(tool-bar-mode -1)
 
 ;; Color settings
 (set-foreground-color "gray")
@@ -14,6 +25,9 @@
 
 ;; Don't clobber creation dates of files (Use on OSX/Windows)
 ;;(setq backup-by-copying t)
+
+;; Delete selections with a keypress
+(delete-selection-mode 1)
 
 ;; matchCamelCasedWords for word navigation (M-f, M-b)
 (global-subword-mode 0) ;; 1 = on, 0 = off
