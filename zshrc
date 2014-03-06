@@ -111,3 +111,4 @@ if [ -x "/opt/teamviewer9/tv_bin/TeamViewer" ]; then
 fi
 alias ipinfo="curl ipinfo.io"
 alias ack="ack-grep"
+alias ret="echo $?"
