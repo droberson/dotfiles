@@ -1,32 +1,32 @@
-# Daniels .xbindkeys
+# Daniel's .xbindkeys
 # needs some works!
 
 # Microsoft Ergo keyboard nonsense
 #
 #
 
-# make Calculator button work on Microsoft Ergo keyboard
+# Make Calculator button work on Microsoft Ergo keyboard
 "xcalc"
 c:148
 
 # make Mail button open new xterm with mutt
-"xterm -e mutt"
+"xterm -geometry 80x50 -e mutt"
 c:163
 
-# make "1" button fire up xterm
+# Make "1" button fire up xterm
 "xterm"
 c:192 # "1" Button
 
-# make "2" button focus firefox and highlight URL bar
-# ripped directly from xdotool's site :)
-"xdotool search "Mozilla Firefox" windowactivate --sync key --clearmodifiers ctrl+l"
-c:193 # "2" Button
-
-# Button #3 launches emacs
+# Make "2" button launch emacs
 "emacs"
+c:193
+
+# Make "3" select text in Firefox's URL bar
+# ripped from xdotool's website :)
+"xdotool search "Mozilla Firefox" windowactivate --sync key --clearmodifiers ctrl+l"
 c:194 # "3" Button
 
-
+# idk what to do with these yet
 c:195 # "4" Button
 c:196 # "5" Button
 
