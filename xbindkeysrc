@@ -1,38 +1,32 @@
-#"xdotool click 4"   # Scroll Up
-#c:201
-#"xdotool click 5"   # Scroll Down
-#c:202
-
+# Daniels .xbindkeys
+# needs some works!
 
 # Microsoft Ergo keyboard nonsense
 #
 #
 
 # make Calculator button work on Microsoft Ergo keyboard
-"kcalc"
+"xcalc"
 c:148
 
-# make Mail button open new Konsole with mutt
-"konsole -e mutt"
+# make Mail button open new xterm with mutt
+"xterm -e mutt"
 c:163
 
-# make "1" button fire up Konsole
-"konsole"
+# make "1" button fire up xterm
+"xterm"
 c:192 # "1" Button
-
-# F-keys Function lock stuff for Emacs
-"xdotool --clearmodifiers key ctrl+x key ctrl+s"
-c:242
-
-#"xdotool --clearmodifiers key alt+x type flyspell-buffer"
-#c:76
 
 # make "2" button focus firefox and highlight URL bar
 # ripped directly from xdotool's site :)
 "xdotool search "Mozilla Firefox" windowactivate --sync key --clearmodifiers ctrl+l"
 c:193 # "2" Button
 
-"xdotool key ctrl+x key ctrl+s"
+# Button #3 launches emacs
+"emacs"
 c:194 # "3" Button
+
+
 c:195 # "4" Button
 c:196 # "5" Button
+

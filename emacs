@@ -80,6 +80,19 @@ print a message in the minibuffer with the result."
 (setq-default line-number-mode 't)
 (setq-default column-number-mode 't)
 
+;; OpenBSD style C indenting. Stole from emacswiki!
+;; C-c . "openbsd" to get after it.
+(c-add-style "openbsd"
+	     '("bsd"
+	       (indent-tabs-mode . t)
+	       (defun-block-intro . 8)
+	       (statement-block-intro . 8)
+	       (statement-case-intro . 8)
+	       (substatement-open . 4)
+	       (substatement 8)
+	       (arglist-cont-nonempty . 4)
+	       (inclass . 8)
+	       (knr-argdecl-intro . 8)))
 
 ;; Aliases
 (defalias 'fm 'flyspell-mode) ;; toggles flyspell mode

@@ -6,7 +6,7 @@ xterm*background: black
 xterm*foreground: gray
 
 xterm*loginShell: true
-xterm*vt100*geometry: 80x50
+xterm*vt100*geometry: 80x25
 !xterm*saveLines: 2000
 xterm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
 
