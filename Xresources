@@ -1,24 +1,42 @@
 ! Daniels .Xresources
-! mostly xterm stuff for now.
 
-XTerm*font: -*-terminus-medium-*-*-*-14-*-*-*-*-*-iso10646-*
-XTerm*font1: -*-terminus-medium-*-*-*-12-*-*-*-*-*-iso10646-*
-XTerm*font2: -*-terminus-medium-*-*-*-14-*-*-*-*-*-iso10646-*
-XTerm*font3: -*-terminus-medium-*-*-*-16-*-*-*-*-*-iso10646-*
-XTerm*font4: -*-terminus-medium-*-*-*-22-*-*-*-*-*-iso10646-*
-XTerm*font5: -*-terminus-medium-*-*-*-24-*-*-*-*-*-iso10646-*
-XTerm*font6: -*-terminus-medium-*-*-*-32-*-*-*-*-*-iso10646-*
+!Xterm stuff: http://how-to.wikia.com/wiki/Howto_configure_xterm/All_configs
 
-!XTerm*faceName: DOSEGA
-!XTerm*faceSize: 10
-XTerm*background: black
-XTerm*foreground: gray
-XTerm*loginShell: true
-XTerm*vt100*geometry: 80x25
-!xterm*saveLines: 2000
-xterm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
+!Fonts
+XTerm*font:    -*-terminus-medium-*-*-*-14-*-*-*-*-*-iso10646-*
+XTerm*font1:   -*-terminus-medium-*-*-*-12-*-*-*-*-*-iso10646-*
+XTerm*font2:   -*-terminus-medium-*-*-*-14-*-*-*-*-*-iso10646-*
+XTerm*font3:   -*-terminus-medium-*-*-*-16-*-*-*-*-*-iso10646-*
+XTerm*font4:   -*-terminus-medium-*-*-*-22-*-*-*-*-*-iso10646-*
+XTerm*font5:   -*-terminus-medium-*-*-*-24-*-*-*-*-*-iso10646-*
+XTerm*font6:   -*-terminus-medium-*-*-*-32-*-*-*-*-*-iso10646-*
 
-XTerm*saveLines: 0
+!Basic color settings
+XTerm*background:	black
+XTerm*foreground:	gray
+XTerm*cursorColor:	yellow
+XTerm*cursorBlink:	true
+XTerm*termName:		xterm-color
+XTerm*boldMode:		false
+
+!Behavior/appearance settings
+XTerm*toolBar:		false
+XTerm*loginShell:	true
+XTerm*vt100*geometry:	80x25
+XTerm*saveLines:	4096
+XTerm*scrollBar:	false
+XTerm*scrollTtyOutput:	false
+XTerm*eightBitInput:	true
+XTerm*scrollKey:	true
+
+! Grab URLs w/ a double click!
+XTerm*charClass: 33:48,35-38:48,42-43:48,45-47:48,58:48,61:48,63-64:48,126:48
+!XTerm*cutChars:	 \\'`"�()*;<>[]{|}
+
+! Open URL with ALT+Left Click
+*VT100*translations: #override \
+  Meta <Btn1Up>: exec-formatted("firefox '%t'", PRIMARY)
+
 XTerm*vt100.translations: #override \n\
   Ctrl <Btn4Down>: string(0x1b) string("[25S") \n\
   Lock Ctrl <Btn4Down>: string(0x1b) string("[25S") \n\
@@ -30,8 +48,9 @@ XTerm*vt100.translations: #override \n\
   Lock @Num_Lock Ctrl <Btn5Down>: string(0x1b) string("[25T") \n\
   @Num_Lock Ctrl <Btn5Down>: string(0x1b) string("[25T") \n\
   <Btn5Down>: string(0x1b) string("[5T") \n\
-  Shift <KeyPress> Prior: string(0x1b) string("[25S") \n\
-  Shift <KeyPress> Next: string(0x1b) string("[25T") \n
+  Shift <KeyPress> Prior: scroll-back(1,halfpage) \n\
+  Shift <KeyPress> Next: scroll-forw(1,halfpage) \n\
+
 
 !mutt stuff
 mutt.vt100.translations: #override \
@@ -41,6 +60,7 @@ mutt.vt100.translations: #override \
 
 
 !xcalc stuff
+! Took this from Archlinux wiki. It looks handsome!
 xcalc*geometry:                        200x275
 xcalc.ti.bevel.background:             #111111
 xcalc.ti.bevel.screen.background:      #000000
@@ -84,3 +104,12 @@ xcalc.ti.button38.background: #555595
 xcalc.ti.button39.background: #555595
 XCalc*Cursor:                 hand2
 XCalc*ShapeStyle:             rectangle
+
+
+!xpdf stuff
+xpdf*enableFreetype:    yes
+xpdf*antialias:         yes
+xpdf*foreground:        black
+xpdf*background:        white
+! Need to add a "sensible browser" alias
+xpdf*urlCommand:        /usr/bin/firefox %s
