@@ -10,7 +10,7 @@
 c:148
 
 # make Mail button open new xterm with mutt
-"xterm -geometry 80x50 -e mutt"
+"xterm -geometry 80x60 -e mutt"
 c:163
 
 # Make "1" button fire up xterm
