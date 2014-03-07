@@ -1,12 +1,20 @@
-! DANIEL HATES KONSOLE!!
-xterm*faceName: DOSEGA
-xterm*faceSize: 10
+! Daniels .Xresources
+! mostly xterm stuff for now.
 
-xterm*background: black
-xterm*foreground: gray
+XTerm*font: -*-terminus-medium-*-*-*-14-*-*-*-*-*-iso10646-*
+XTerm*font1: -*-terminus-medium-*-*-*-12-*-*-*-*-*-iso10646-*
+XTerm*font2: -*-terminus-medium-*-*-*-14-*-*-*-*-*-iso10646-*
+XTerm*font3: -*-terminus-medium-*-*-*-16-*-*-*-*-*-iso10646-*
+XTerm*font4: -*-terminus-medium-*-*-*-22-*-*-*-*-*-iso10646-*
+XTerm*font5: -*-terminus-medium-*-*-*-24-*-*-*-*-*-iso10646-*
+XTerm*font6: -*-terminus-medium-*-*-*-32-*-*-*-*-*-iso10646-*
 
-xterm*loginShell: true
-xterm*vt100*geometry: 80x25
+!XTerm*faceName: DOSEGA
+!XTerm*faceSize: 10
+XTerm*background: black
+XTerm*foreground: gray
+XTerm*loginShell: true
+XTerm*vt100*geometry: 80x25
 !xterm*saveLines: 2000
 xterm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
 
