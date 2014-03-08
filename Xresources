@@ -20,14 +20,15 @@ XTerm*termName:		xterm-color
 XTerm*boldMode:		false
 
 !Behavior/appearance settings
-XTerm*toolBar:		false
-XTerm*loginShell:	true
-XTerm*vt100*geometry:	80x25
-XTerm*saveLines:	4096
-XTerm*scrollBar:	false
-XTerm*scrollTtyOutput:	false
-XTerm*eightBitInput:	true
-XTerm*scrollKey:	true
+XTerm*toolBar:			false
+XTerm*loginShell:		true
+XTerm*vt100*geometry:		80x25
+XTerm*saveLines:		4096
+XTerm*scrollBar:		false
+XTerm*scrollTtyOutput:		false
+XTerm*eightBitInput:		false
+XTerm*metaSendsEscape:		true
+XTerm*scrollKey:		true
 XTerm*backarrowKeyIsErase:	true
 
 ! Grab URLs w/ a double click!
