@@ -28,6 +28,7 @@ XTerm*scrollBar:	false
 XTerm*scrollTtyOutput:	false
 XTerm*eightBitInput:	true
 XTerm*scrollKey:	true
+XTerm*backarrowKeyIsErase:	true
 
 ! Grab URLs w/ a double click!
 XTerm*charClass: 33:48,35-38:48,42-43:48,45-47:48,58:48,61:48,63-64:48,126:48
@@ -113,3 +114,26 @@ xpdf*foreground:        black
 xpdf*background:        white
 ! Need to add a "sensible browser" alias
 xpdf*urlCommand:        /usr/bin/firefox %s
+
+
+!xman
+xman*background:                   floralwhite
+xman*foreground:                   darkolivegreen
+xman*directoryFontNormal:          8x13bold
+xman*manualFontNormal:             -adobe-courier-bold-r-normal--18-180-75-75-m-110-iso8859-1
+xman*manualFontBold:               -adobe-helvetica-bold-r-normal--18-180-75-75-p-103-iso8859-1
+xman*manualFontItalic:             -adobe-courier-bold-o-normal--18-180-75-75-m-110-iso8859-1
+xman*topBox*background:            gold
+xman*topBox*foreground:            black
+xman*topBox*geometry:              120x105+0+0
+xman*help*background:              lightgray
+xman*help*foreground:              black
+xman*help*geometry:                900x870+0+0
+xman*manualBrowser*background:     steelblue
+xman*manualBrowser*foreground:     lightgray
+xman*xmanCommands*background:      black
+xman*xmanCommands*foreground:      gold
+xman*xmanSections*background:      skyblue
+xman*xmanSections*foreground:      black
+xman*xmanSearch*background:        lightgray
+xman*xmanSearch*foreground:        black
