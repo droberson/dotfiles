@@ -112,3 +112,5 @@ fi
 alias ipinfo="curl ipinfo.io"
 alias ack="ack-grep"
 alias ret="echo $?"
+alias ipinfo="curl ipinfo.io"
+
