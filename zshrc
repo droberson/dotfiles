@@ -77,10 +77,12 @@ bindkey "^X" insert-sudo
 #zcalco () { print $(( [#8] ans = ${@:-ans} )) }
 #zcalcb () { print $(( [#2] ans = ${@:-ans} )) }
 
-# I like colorful grep!
-# OpenBSD doesn't have GNU grep by default, so had to add checks
+# I like colorful grep/ls!
+# OpenBSD doesn't have GNU grep or ls by default, so had to add checks
 if have_gnu_ls; then
-    alias ls="ls --color"
+    alias ls="ls -F --color"
+else
+    alias ls="ls -F"
 fi
 
 if have_gnu_grep; then
@@ -112,10 +114,18 @@ if [ $EUID -ne 0 ]; then
     alias shutdown="sudo /sbin/shutdown"
 fi
 
-# Command aliases
+# Strip comments
+alias nocomment="sed '/^\s*#/d'"
+
+# Teamviewer if it exists.
 if [ -x "/opt/teamviewer9/tv_bin/TeamViewer" ]; then
     alias teamviewer="/opt/teamviewer9/tv_bin/TeamViewer"
 fi
+
+# Start a quick webserver to serve up cwd
+alias serve="python -m SimpleHTTPServer"
+
+# Miscellany
 alias ipinfo="curl ipinfo.io"
 alias ack="ack-grep"
 alias ret="echo $?"
