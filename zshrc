@@ -105,6 +105,13 @@ fi
 alias unix2win="sed 's/$/`echo \\\r`/'"
 alias win2unix="sed 's/\r//'"
 
+# use sudo to reboot/halt computer if not root
+if [ $EUID -ne 0 ]; then
+    alias reboot="sudo /sbin/reboot"
+    alias halt="sudo /sbin/halt"
+    alias shutdown="sudo /sbin/shutdown"
+fi
+
 # Command aliases
 if [ -x "/opt/teamviewer9/tv_bin/TeamViewer" ]; then
     alias teamviewer="/opt/teamviewer9/tv_bin/TeamViewer"
