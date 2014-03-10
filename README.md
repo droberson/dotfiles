@@ -19,4 +19,4 @@ To install, type the following into your shell:
 - cd
 - git clone https://github.com/droberson/dotfiles.git
 - cd dotfiles
-- bash ./install-dotfiles.sh
+- sh ./install-dotfiles.sh
