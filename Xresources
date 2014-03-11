@@ -45,6 +45,14 @@ XTerm*vt100.translations: #override \n\
   Shift <KeyPress> Prior: scroll-back(1,halfpage) \n\
   Shift <KeyPress> Next: scroll-forw(1,halfpage) \n\
 
+! Scroll wheel on the mouse
+XTerm.vt100.translations: #override \n\
+  Shift,:scroll-back(1,line) \n\
+  Shift,:scroll-forw(1,line) \n\
+  Ctrl,:scroll-back(1,page) \n\
+  Ctrl,:scroll-forw(1,page) \n\
+  ,:scroll-back(1,halfpage) \n\
+  ,:scroll-forw(1,halfpage) \n\
 
 !mutt stuff
 mutt.vt100.translations: #override \
