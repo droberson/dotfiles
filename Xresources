@@ -103,8 +103,8 @@ xcalc.ti.button34.background: #444484
 xcalc.ti.button37.background: #555595
 xcalc.ti.button38.background: #555595
 xcalc.ti.button39.background: #555595
-XCalc*Cursor:                 hand2
-XCalc*ShapeStyle:             rectangle
+xcalc*Cursor:                 hand2
+xcalc*ShapeStyle:             rectangle
 
 
 !xpdf stuff
@@ -116,3 +116,11 @@ xpdf*background:        white
 xpdf*urlCommand:        /usr/bin/firefox %s
 
 
+!xman stuff
+xman*topBox:		false
+xman*background:	black
+xman*foreground:	lightblue
+xman*topBox*background:	gold
+xman*topBox*foreground: black
+xman*topBox*geometry:	120x100
+xman*geometry:		800x800
