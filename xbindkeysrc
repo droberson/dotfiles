@@ -26,6 +26,7 @@ c:193
 "xdotool search "Mozilla Firefox" windowactivate --sync key --clearmodifiers ctrl+l"
 c:194 # "3" Button
 
+# Unused at this time
 c:195 # "4" Button
 
 # Button 5 opens "xman"
