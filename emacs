@@ -17,6 +17,12 @@
 ;; Stop to show toolbar
 (if window-system (tool-bar-mode -1))
 
+;; Use mouse in xterms
+;; TODO: make it recognize if in X, console, or xterm if possible
+(require 'xt-mouse)
+(xterm-mouse-mode t)
+(moise-wheel-mode t)
+
 ;; Color settings
 (set-foreground-color "gray")
 (set-background-color "black")
