@@ -38,6 +38,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 
 # This allows MIME extensions so you can "execute" files
+zstyle :mime: mailcap ~/.mailcap /etc/mailcap
 autoload -U zsh-mime-setup
 zsh-mime-setup
 
