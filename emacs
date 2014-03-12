@@ -21,7 +21,7 @@
 ;; TODO: make it recognize if in X, console, or xterm if possible
 (require 'xt-mouse)
 (xterm-mouse-mode t)
-(moise-wheel-mode t)
+(mouse-wheel-mode t)
 
 ;; Color settings
 (set-foreground-color "gray")
