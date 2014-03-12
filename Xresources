@@ -124,3 +124,9 @@ xman*topBox*background:	gold
 xman*topBox*foreground: black
 xman*topBox*geometry:	120x100
 xman*geometry:		800x800
+
+!xclock stuff
+xclock*update:            1
+xclock*analog:            false
+xclock*Foreground:        white
+xclock*background:        black
