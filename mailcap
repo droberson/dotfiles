@@ -1,0 +1,3 @@
+# Daniel Roberson's .mailcap
+
+application/pdf; xpdf '%s';
