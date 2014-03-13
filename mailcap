@@ -1,3 +1,10 @@
 # Daniel Roberson's .mailcap
 
-application/pdf; xpdf '%s';
+application/pdf;	xpdf '%s';
+
+
+# pictures with feh
+image/jpeg;		feh '%s';
+image/png;		feh '%s';
+image/gif;		feh '%s';
+
