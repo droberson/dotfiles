@@ -1,0 +1,25 @@
+# Daniel's fvwmrc
+
+DeskTopSize 3x3
+
+# Mouse and focus
+ClickTime 350
+MoveThreshold 3
+Style * ClickToFocus, MouseFocusClickRaises
+
+Style "FvwmPager"	StaysOnTop
+Style "Fvwm*"     	NoTitle,  Sticky, WindowListSkip
+Style "Fvwm*"       	BorderWidth 2, CirculateSkipIcon, CirculateSkip
+
+#*FvwmPagerFont -adobe-helvetica-bold-r-*-*-10-*-*-*-*-*-*-*
+*FvwmPagerBack darkblue
+*FvwmPagerFore white
+*FvwmPagerHilight #2d2d2d
+*FvwmPagerGeometry 80x60-1-1
+*FvwmPagerLabel 0 "Desktops"
+
+AddToFunc InitFunction    "I" Module FvwmPager 0 0
++                         "I" exec xsetroot -solid black
+
+AddToFunc RestartFunction "I" Module FvwmPager 0 0
++                         "I" exec xsetroot -solid black
