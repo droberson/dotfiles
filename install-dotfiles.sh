@@ -8,7 +8,7 @@
 # TODO: Add more error checking.
 
 OLDDIR="$HOME/.dotfiles-backup"
-DOTFILES="profile mailcap mime.types zshrc kshrc emacs muttrc vimrc xbindkeysrc Xresources"
+DOTFILES="profile fvwmrc mailcap mime.types zshrc kshrc emacs muttrc vimrc xbindkeysrc Xresources"
 
 echo "Installing Daniel Roberson's dotfiles."
 echo
