@@ -8,3 +8,7 @@ image/jpeg;		feh '%s';
 image/png;		feh '%s';
 image/gif;		feh '%s';
 
+# wav files with aplay
+audio/x-wav;		aplay -i '%s'; needsterminal
+audio/wav;		aplay -i '%s'; needsterminal
+
