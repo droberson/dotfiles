@@ -42,6 +42,10 @@ zstyle :mime: mailcap ~/.mailcap /etc/mailcap
 autoload -U zsh-mime-setup
 zsh-mime-setup
 
+# History setup
+setopt append_history
+setopt extended_history
+
 # Function to see if a program exists.
 program_exists () {
     type "$1" >/dev/null ;
@@ -122,6 +126,11 @@ alias nocomment="sed '/^\s*#/d'"
 if [ -x "/opt/teamviewer9/tv_bin/TeamViewer" ]; then
     alias teamviewer="/opt/teamviewer9/tv_bin/TeamViewer"
 fi
+
+# "backup" alias.. copies a file and appends time+date to its original name
+backup() {
+    cp -rp $1{,.backup.$(date +%m-%d-%g_%H-%M-%S)}
+}
 
 # Start a quick webserver to serve up cwd
 alias serve="python -m SimpleHTTPServer"
