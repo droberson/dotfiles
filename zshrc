@@ -136,8 +136,9 @@ backup() {
 alias serve="python -m SimpleHTTPServer"
 
 # Miscellany
+alias pubip="curl ifconfig.me"
 alias ipinfo="curl ipinfo.io"
 alias ack="ack-grep"
 alias ret="echo $?"
 alias ipinfo="curl ipinfo.io"
-
+alias header="curl -I"
