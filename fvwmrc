@@ -7,19 +7,29 @@ ClickTime 350
 MoveThreshold 3
 Style * ClickToFocus, MouseFocusClickRaises
 
+# Pager stuff
 Style "FvwmPager"	StaysOnTop
 Style "Fvwm*"     	NoTitle,  Sticky, WindowListSkip
 Style "Fvwm*"       	BorderWidth 2, CirculateSkipIcon, CirculateSkip
 
-#*FvwmPagerFont -adobe-helvetica-bold-r-*-*-10-*-*-*-*-*-*-*
 *FvwmPagerBack darkblue
 *FvwmPagerFore white
 *FvwmPagerHilight #2d2d2d
 *FvwmPagerGeometry 80x60-1-1
 *FvwmPagerLabel 0 "Desktops"
 
+Style "xclock"		StaysOnTop, NoTitle, Sticky, WindowListSkip
+
 AddToFunc InitFunction    "I" Module FvwmPager 0 0
 +                         "I" exec xsetroot -solid black
++			  "I" exec xclock
 
 AddToFunc RestartFunction "I" Module FvwmPager 0 0
 +                         "I" exec xsetroot -solid black
+
+Mouse 1 6       A       Close
+Mouse 1 8       A       Maximize
+Mouse 1 1       A       Menu Window-Ops Nop
+
+Style * NoButton 2
+Style * NoButton 4
