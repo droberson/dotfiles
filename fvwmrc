@@ -33,3 +33,17 @@ Mouse 1 1       A       Menu Window-Ops Nop
 
 Style * NoButton 2
 Style * NoButton 4
+
+
+# ALT + left mouse moves window
+# ALT + right mouse button moves window focus below others
+# ALT + middle mouse button moves + resizes window
+DestroyFunc drag-n-move
+AddToFunc drag-n-move M move
+DestroyFunc drag-n-resize
+AddToFunc drag-n-resize M resize 
+
+Mouse 1 W HM drag-n-move
+Mouse 2 W HM drag-n-resize
+Mouse 3 W HM RaiseLower 
+
