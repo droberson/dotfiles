@@ -140,6 +140,7 @@ alias serve="python -m SimpleHTTPServer"
 # usage: remind <militarytime> <email/sms> <message>
 # TODO: check if <militarytime> is actualy a military time
 # TODO: check if email is valid for arg2
+# TODO: address book
 remind() {
     if [ $# -lt 3 ]; then
 	echo "usage: $0 <militarytime> <702xxxxxx@vmobl.com> <message>"
@@ -160,7 +161,7 @@ remind() {
 	fi
     done
 
-    # schedule with 'at'
+    # Schedule with 'at'
     echo "echo $MSG | mail $2" | at $1 2> /dev/null
     if [ $? -eq 1 ]; then
 	echo "$0 failed. Check syntax and try again."
