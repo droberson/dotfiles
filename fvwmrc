@@ -7,19 +7,56 @@ ClickTime 350
 MoveThreshold 3
 Style * ClickToFocus, MouseFocusClickRaises
 
+# Pager stuff
 Style "FvwmPager"	StaysOnTop
 Style "Fvwm*"     	NoTitle,  Sticky, WindowListSkip
 Style "Fvwm*"       	BorderWidth 2, CirculateSkipIcon, CirculateSkip
 
-#*FvwmPagerFont -adobe-helvetica-bold-r-*-*-10-*-*-*-*-*-*-*
 *FvwmPagerBack darkblue
 *FvwmPagerFore white
 *FvwmPagerHilight #2d2d2d
 *FvwmPagerGeometry 80x60-1-1
 *FvwmPagerLabel 0 "Desktops"
 
+Style "xclock"		StaysOnTop, NoTitle, Sticky, WindowListSkip
+
 AddToFunc InitFunction    "I" Module FvwmPager 0 0
 +                         "I" exec xsetroot -solid black
++			  "I" exec xclock
 
 AddToFunc RestartFunction "I" Module FvwmPager 0 0
 +                         "I" exec xsetroot -solid black
+
+# Titlebar buttons
+Mouse 1 6       A       Close
+Mouse 1 8       A       Maximize
+Mouse 1 1       A       Menu Window-Ops Nop
+Mouse 1 4	A	Iconify
+
+# Single click de-iconifys
+Mouse 0 I 	A 	Iconify
+
+Style * NoButton 2
+#Style * NoButton 4
+
+
+# This defines the most common window operations
+AddToMenu "Window-Ops"
++              "Move (Alt-F7)" Move
++              "Minimize" Iconify
++              "Destroy" Destroy
++              "Close" Close
++              "Delete" Delete
+
+
+# ALT + left mouse moves window
+# ALT + right mouse button moves window focus below others
+# ALT + middle mouse button moves + resizes window
+DestroyFunc drag-n-move
+AddToFunc drag-n-move M move
+DestroyFunc drag-n-resize
+AddToFunc drag-n-resize M resize 
+
+Mouse 1 W HM drag-n-move
+Mouse 2 W HM drag-n-resize
+Mouse 3 W HM RaiseLower 
