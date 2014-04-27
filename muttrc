@@ -132,3 +132,8 @@ set crypt_replyencrypt = yes
 # Right arrow will decrypt from index, 'D' will decrypt from pager
 macro index <right> "<check-traditional-pgp><display-message>"
 macro pager D "<check-traditional-pgp><display-message"
+
+# Control B to launch urlview
+
+macro index \cb |urlview\n 'call urlview to extract URLs out of a message'
+
