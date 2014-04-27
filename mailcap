@@ -12,3 +12,7 @@ image/gif;		feh '%s';
 audio/x-wav;		aplay -i '%s'; needsterminal
 audio/wav;		aplay -i '%s'; needsterminal
 
+# Word documents w/ antiword
+application/msword; antiword %s ; copiousoutput
+
+
