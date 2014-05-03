@@ -179,3 +179,8 @@ alias ack="ack-grep"
 alias ret="echo $?"
 alias ipinfo="curl ipinfo.io"
 alias header="curl -I"
+
+# Fuck capslock
+setxkbmap -option ctrl:nocaps
+#setxkbmap -option
+
