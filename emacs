@@ -105,4 +105,4 @@ print a message in the minibuffer with the result."
 (defalias 'fm 'flyspell-mode) ;; toggles flyspell mode
 
 
-
+;; test
