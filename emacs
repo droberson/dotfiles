@@ -7,6 +7,7 @@
 (require 'server)
 (unless (server-running-p)
   (server-start))
+  (add-to-list 'auto-mode-alist '("/mutt" . mail-mode))
 
 ;; Type y or n instead of yes or no
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -102,4 +103,6 @@ print a message in the minibuffer with the result."
 
 ;; Aliases
 (defalias 'fm 'flyspell-mode) ;; toggles flyspell mode
+
+
 
