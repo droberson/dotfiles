@@ -105,4 +105,7 @@ print a message in the minibuffer with the result."
 (defalias 'fm 'flyspell-mode) ;; toggles flyspell mode
 
 
-;; test
+;; Melpa!@#$
+(require 'package)
+(add-to-list 'package-archives
+	     '("melpa-stable" . "http://stable.melpa.org/packages/") t)
