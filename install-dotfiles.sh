@@ -5,7 +5,6 @@
 #                     -- if they are present.
 # By Daniel Roberson
 #
-# TODO: Add more error checking.
 
 OLDDIR="$HOME/.dotfiles-backup"
 DOTFILES="profile fvwmrc mailcap mime.types zshrc kshrc emacs muttrc vimrc xbindkeysrc Xresources"
@@ -59,4 +58,21 @@ for file in $DOTFILES; do
     fi
 done
 
+# Create .zsh.d directory
+echo -n "Checking if $HOME/.zsh.d exists.. "
+if [ -d $HOME/.zsh.d ]; then
+    echo "yes."
+else
+    echo "no. Creating directory."
+    mkdir $HOME/.zsh.d
+fi
+
+# Link zsh.d files
+echo "Linking .zsh.d files.."
+for file in $(ls $PWD/zsh.d); do
+    echo -n "$file "
+    ln -s $PWD/zsh.d/$file $HOME/.zsh.d/$file
+done
+
 echo "Done."
+
