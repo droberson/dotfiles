@@ -181,7 +181,9 @@ remind() {
 # Miscellany
 alias pubip="curl ifconfig.me"
 alias ipinfo="curl ipinfo.io"
-alias ack="ack-grep"
+if [ `uname` != "Darwin" ]; then
+	alias ack="ack-grep"
+fi
 alias ret="echo $?"
 alias ipinfo="curl ipinfo.io"
 alias header="curl -I"
@@ -192,5 +194,6 @@ setxkbmap -option ctrl:nocaps
 
 # less syntax highlighting
 # requires source-highlighting package
+# TODO: add check for Linux and FreeBSD
 export LESSOPEN="|/usr/local/Cellar/source-highlight/3.1.8_3/bin/src-hilite-lesspipe.sh %s"
 export LESS=" -R "
