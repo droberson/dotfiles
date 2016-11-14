@@ -192,8 +192,9 @@ alias header="curl -I"
 setxkbmap -option ctrl:nocaps
 #setxkbmap -option
 
-# less syntax highlighting
-# requires source-highlighting package
-# TODO: add check for Linux and FreeBSD
-export LESSOPEN="|/usr/local/Cellar/source-highlight/3.1.8_3/bin/src-hilite-lesspipe.sh %s"
-export LESS=" -R "
+# .zsh.d directory
+if [ -d $HOME/.zsh.d ]; then
+  for file in $HOME/.zsh.d/*.zsh; do
+    source $file
+  done
+fi
