@@ -6,4 +6,5 @@ TODO LIST
 - add .zsh_aliases and .zsh_private_aliases
 - add .screenrc
 - add elinks dotfiles
-- replace install-dotfiles.sh with a Makefile
+- add .d directory for zsh and split each zsh addition into its own managable file
+
