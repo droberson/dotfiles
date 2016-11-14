@@ -65,15 +65,15 @@ have_gnu_ls () {
 }
 
 # Control+X inserts "sudo" at start of line
-insert_sudo () {
-    [[ -z $BUFFER ]] && zle up-history
-    if [[ $BUFFER != sudo\ * ]]; then
-	zle beginning-of-line;
-	zle -U "sudo "
-    fi
-}
-zle -N insert-sudo insert_sudo
-bindkey "^X" insert-sudo
+# insert_sudo () {
+#     [[ -z $BUFFER ]] && zle up-history
+#     if [[ $BUFFER != sudo\ * ]]; then
+# 	zle beginning-of-line;
+# 	zle -U "sudo "
+#     fi
+# }
+# zle -N insert-sudo insert_sudo
+# bindkey "^X" insert-sudo
 
 # Here are some quick calculators that output in integer
 # hexadecimal, decimal, and binary.
@@ -184,3 +184,7 @@ alias header="curl -I"
 setxkbmap -option ctrl:nocaps
 #setxkbmap -option
 
+# less syntax highlighting
+# requires source-highlighting package
+export LESSOPEN="|/usr/local/Cellar/source-highlight/3.1.8_3/bin/src-hilite-lesspipe.sh %s"
+export LESS=" -R "
