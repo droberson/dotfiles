@@ -1,7 +1,7 @@
 ! Daniels .Xresources
 ! -- cant put apostrophes without xrdb getting sad :(
 
-!Xterm stuff: http://how-to.wikia.com/wiki/Howto_configure_xterm/All_configs
+! !Xterm stuff: http://how-to.wikia.com/wiki/Howto_configure_xterm/All_configs
 
 !Fonts
 XTerm*font:    -*-terminus-medium-*-*-*-14-*-*-*-*-*-iso10646-*
@@ -31,14 +31,13 @@ XTerm*eightBitInput:		false
 XTerm*metaSendsEscape:		true
 XTerm*scrollKey:		true
 XTerm*backarrowKeyIsErase:	true
-
-! Grab URLs w/ a double click!
-XTerm*charClass: 33:48,35-38:48,42-43:48,45-47:48,58:48,61:48,63-64:48,126:48
-!XTerm*cutChars:	 \\'`"�()*;<>[]{|}
-
 ! Open URL with ALT+Left Click
 *VT100*translations: #override \
   Meta <Btn1Up>: exec-formatted("firefox '%t'", PRIMARY)
+ 
+! Grab URLs w/ a double click!
+XTerm*charClass: 33:48,35-38:48,42-43:48,45-47:48,58:48,61:48,63-64:48,126:48
+!XTerm*cutChars:	 \\'`"�()*;<>[]{|}
 
 ! Shift + Page up/Page down scroll buffer
 XTerm*vt100.translations: #override \n\
@@ -54,13 +53,69 @@ XTerm.vt100.translations: #override \n\
   ,:scroll-back(1,halfpage) \n\
   ,:scroll-forw(1,halfpage) \n\
 
-!mutt stuff
+! rxvt-unicode stuff
+URxvt.font:xft:Inconsolata:pixelsize=12,style=Medium, xft:Symbola:pixelsize=10,style=Regular
+URxvt.boldFont:xft:Inconsolata:style=Bold,pixelsize=12, xft:Symbola:pixelsize=10,style=Regular
+
+URxvt*faceSize:              10
+URxvt*bellIsUrgent:          true
+
+!! scroll
+!! do not scroll with output
+URxvt*scrollTtyOutput:      false
+!! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer:     true
+!! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress:    true
+
+!! scrollback buffer
+URxvt.secondaryScreen:  1
+URxvt.secondaryScroll:  0
+URxvt.secondaryWheel:   1
+
+!! color settings
+URxvt*background:            #002b36
+URxvt*foreground:            gray
+URvvt*scrollBar:             false
+URxvt*cursorColor:           yellow
+URxvt*termName:              rxvt
+URxvt*cursorBlink:           true
+*pointerColorBackground:     #586e75
+*pointerColorForeground:     #93a1a1
+URxvt*utf8:                  1
+
+!! clickable urls
+URxvt.perl-ext-common:      default,matcher,selection-to-clipboard,clipboard
+URxvt.url-launcher:         /usr/bin/xdg-open
+URxvt.matcher.button:       1
+URxvt.url-select.underline: true
+
+!! copy paste
+URxvt*clipboard.copycmd:    xclip -i -selection clipboard
+URxvt*clipboard.pastecmd:   xclip -o -selection clipboard
+
+!! disable default bindings for Control-Shift
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+!! Control-Shift-C for copy
+URxvt.keysym.C-C: perl:clipboard:copy
+URxvt.keysym.C-V: perl:clipboard:paste
+
+!! get option over to work
+URxvt.keysym.M-Left:        \033[1;5D
+URxvt.keysym.M-Right:       \033[1;5C
+URxvt.keysym.Control-Left:  \033[1;5D
+URxvt.keysym.Control-Right: \033[1;5C
+
+
+! mutt stuff
 mutt.vt100.translations: #override \
 	None<Btn4Down>: string(<<) \n\
 	NONE<Btn5Down>: string(>>) \n
 
 
-!xcalc stuff
+! xcalc stuff
 ! Took this from Archlinux wiki. It looks handsome!
 xcalc*geometry:                        200x275
 xcalc.ti.bevel.background:             #111111
