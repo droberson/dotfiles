@@ -189,7 +189,7 @@ alias ipinfo="curl ipinfo.io"
 alias header="curl -I"
 
 # Fuck capslock
-setxkbmap -option ctrl:nocaps
+#setxkbmap -option ctrl:nocaps
 #setxkbmap -option
 
 # .zsh.d directory
