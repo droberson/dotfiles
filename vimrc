@@ -13,6 +13,6 @@ set mouse=a
 syntax on
 filetype on
 
-" I think the evening theme is easier to read..
-colorscheme evening
+" I think the desert theme is easier to read..
+colorscheme desert
 
