@@ -33,9 +33,6 @@ if have_gnu_grep; then
     alias rgrep="rgrep --color"
 fi
 
-# Purple is easier to read against black backgrounds than dark blue
-export LS_COLORS=$LS_COLORS:'di=0;35:'
-
 # Text converters
 alias unix2win="sed 's/$/`echo \\\r`/'"
 alias win2unix="sed 's/\r//'"
