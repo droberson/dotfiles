@@ -1,4 +1,4 @@
-;; .emacs by Daniel Roberson (daniel ( AT ) revenantlabs . net)
+;; .emacs by Daniel Roberson (daniel @ planethacker . net)
 ;;
 ;; This is going to be a perpetual work in progress!!! 
 ;;
@@ -53,11 +53,9 @@
 
 ;; Set default terminal
 (if (eq system-type 'gnu/linux)
-    (setq explicit-shell-file-name "/usr/bin/zsh")
-)
+    (setq explicit-shell-file-name "/usr/bin/zsh"))
 (if (eq system-type 'berkeley-unix)
-    (setq explicit-shell-file-name "/usr/local/bin/zsh")
-)
+    (setq explicit-shell-file-name "/usr/local/bin/zsh"))
 
 ;; File name associations
 (add-to-list 'auto-mode-alist '("\\.elvi\\'" . sh-mode))  ;; Surfraw elvis
@@ -109,3 +107,8 @@ print a message in the minibuffer with the result."
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+
+;; I use zsh, so stop asking me which program to use, ansi-term!
+(defadvice ansi-term (before shell-prompt)
+  (interactive (list explicit-shell-file-name)))
+(ad-activate 'ansi-term)
