@@ -14,7 +14,7 @@ c:148
 c:163
 
 # Make "1" button fire up xterm
-"xterm"
+"rxvt-unicode"
 c:192 # "1" Button
 
 # Make "2" button launch emacs
