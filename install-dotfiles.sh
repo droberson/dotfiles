@@ -7,7 +7,7 @@
 #
 
 OLDDIR="$HOME/.dotfiles-backup"
-DOTFILES="profile fvwmrc mailcap mime.types zshrc kshrc emacs muttrc vimrc xbindkeysrc Xresources"
+DOTFILES="profile fvwmrc mailcap mime.types zshrc kshrc emacs muttrc vimrc xbindkeysrc Xresources gdbinit"
 
 echo "Installing Daniel Roberson's dotfiles."
 echo
