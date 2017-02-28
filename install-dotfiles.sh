@@ -74,6 +74,7 @@ for file in $(ls $PWD/zsh.d); do
     if [ -h $HOME/.zsh.d/$file ]; then
 	echo "is a symbolic link. Skipping."
     else
+	echo "not installed yet. applying symlink."
 	ln -s $PWD/zsh.d/$file $HOME/.zsh.d/$file
     fi
 done
