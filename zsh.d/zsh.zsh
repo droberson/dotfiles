@@ -55,3 +55,9 @@ setopt extended_history
 # Purple is easier to read against black backgrounds than dark blue
 export LS_COLORS=$LS_COLORS:'di=0;35:'
 
+# add ~/bin to $PATH if it exists
+if [ -d ~/bin ]; then
+	PATH=$PATH:~/bin
+	export PATH
+fi
+
