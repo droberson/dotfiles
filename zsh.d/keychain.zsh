@@ -1,8 +1,7 @@
 # keychain integration
 
 # check if keychain is installed
-which keychain >/dev/null
-if [ $? -eq 1 ]; then
+if ! program_exists keychain; then
 	exit
 fi
 
