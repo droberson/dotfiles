@@ -5,3 +5,6 @@ vbell off
 bindkey ^[[1;5D prev
 bindkey ^[[1;5C next
 
+hardstatus on
+hardstatus alwayslastline
+hardstatus string '%{= kG}%-Lw%{= kW}%50> %n*%f %t%{= kG}%+Lw%< %{= kG}%-=%D %m/%d/%Y %C:%s %A %1`%{-}'
