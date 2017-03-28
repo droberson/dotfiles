@@ -1,0 +1,7 @@
+startup_message off
+vbell off
+
+# Control+left / Control+right switches screens
+bindkey ^[[1;5D prev
+bindkey ^[[1;5C next
+
