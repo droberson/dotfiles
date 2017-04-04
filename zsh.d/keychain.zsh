@@ -2,7 +2,7 @@
 
 # check if keychain is installed
 if ! program_exists keychain; then
-	exit
+	return
 fi
 
 # check if rsa key exists
