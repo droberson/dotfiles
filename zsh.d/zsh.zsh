@@ -5,7 +5,12 @@ prompt adam1 black
 
 setopt histignorealldups sharehistory
 
-export EDITOR="emacsclient -nw"
+if [ -e /usr/bin/emacs ]; then
+  export EDITOR="emacs"
+else
+  export EDITOR="vi"
+fi
+
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
