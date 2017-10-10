@@ -12,7 +12,7 @@
 export PAGER="less"
 
 # I prefer emacs
-export EDITOR="emacsclient -nw"
+export EDITOR="emacs"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
