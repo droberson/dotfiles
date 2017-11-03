@@ -2,7 +2,8 @@
 # Start zsh if on Windows
 #
 uname -r | grep "Microsoft" > /dev/null
-if [ $? -eq 0 ]; then
+if [ $? -eq 0 ] && [ -t 1 ] && [ ! $ALREADY_RUNNING_BASH ]; then
+    export ALREADY_RUNNING_BASH="yes"
     zsh && exit
 fi
 
