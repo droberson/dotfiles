@@ -7,7 +7,8 @@
 #
 
 OLDDIR="$HOME/.dotfiles-backup"
-DOTFILES="profile fvwmrc mailcap mime.types zshrc kshrc emacs muttrc vimrc xbindkeysrc Xresources gdbinit screenrc"
+DOTFILES="bashrc proile fvwmrc mailcap mime.types zshrc kshrc emacs
+          muttrc vimrc xbindkeysrc Xresources gdbinit screenrc"
 
 echo "[+] Installing dotfiles."
 echo
