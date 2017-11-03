@@ -53,7 +53,7 @@ for file in $DOTFILES; do
 	fi
     else
 	# Symbolic link and dotfile do not exist, Create link.
-	echo "[*] Installing symbolic link for $file"
+	echo "  [*] Installing symbolic link for $file"
 	ln -s "$PWD/$file" "$HOME/.$file"
     fi
 done
