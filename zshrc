@@ -1,5 +1,11 @@
 # Daniel Roberson's .zshrc
 
+# cd to Linux home directory
+uname -r | grep "Microsoft" > /dev/null
+if [ $? -eq 0 ]; then
+    cd
+fi
+
 # Function to see if a program exists.
 program_exists () {
     type "$1" >/dev/null ;
