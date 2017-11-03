@@ -3,7 +3,7 @@
 #
 uname -r | grep "Microsoft" > /dev/null
 if [ $? -eq 0 ]; then
-    zsh
+    zsh && exit
 fi
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
