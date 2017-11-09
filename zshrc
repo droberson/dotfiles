@@ -3,6 +3,7 @@
 # cd to Linux home directory
 uname -r | grep "Microsoft" > /dev/null
 if [ $? -eq 0 ]; then
+    export SHELL="/bin/zsh"
     cd
 fi
 
