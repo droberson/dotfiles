@@ -22,7 +22,8 @@
 ;; TODO: make it recognize if in X, console, or xterm if possible
 (require 'xt-mouse)
 (xterm-mouse-mode t)
-(mouse-wheel-mode t)
+(when (require 'mwheel nil 'noerror)
+  (mouse-wheel-mode t))
 
 ;; Color settings
 (set-foreground-color "gray")
