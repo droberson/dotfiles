@@ -37,3 +37,6 @@ set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
 
+" Lua stuff
+au BufNewFile,BufRead *.nse set syntax=lua
+
