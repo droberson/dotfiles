@@ -38,5 +38,9 @@ set foldlevel=99
 nnoremap <space> za
 
 " Lua stuff
-au BufNewFile,BufRead *.nse set syntax=lua
+au BufNewFile,BufRead *.nse,*.lua
+    \ set syntax=lua |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set expandtab
 
