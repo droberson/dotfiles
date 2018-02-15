@@ -44,3 +44,12 @@ au BufNewFile,BufRead *.nse,*.lua
     \ set shiftwidth=2 |
     \ set expandtab
 
+" C stuff
+au BufNewFile,BufRead *.c,*.h
+    \ set syntax=c |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set expandtab |
+    \ set autoindent
+
+au BufRead,BufNewFile, *.c,*.h match BadWhitespace /\s\+$/
