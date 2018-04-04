@@ -66,3 +66,9 @@ if [ -d ~/bin ]; then
 	export PATH
 fi
 
+# add ~/.local/bin to $PATH if it exists
+if [ -d ~/.local/bin ]; then
+	PATH=$PATH:~/.local/bin
+	export PATH
+fi
+
