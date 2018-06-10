@@ -53,3 +53,7 @@ au BufNewFile,BufRead *.c,*.h
     \ set autoindent
 
 au BufRead,BufNewFile, *.c,*.h match BadWhitespace /\s\+$/
+
+" golang stuff
+au BufRead,BufNewFile, *.go, match BadWhitespace /\s\+$/
+
