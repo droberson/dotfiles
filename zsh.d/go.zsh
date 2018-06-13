@@ -1,10 +1,16 @@
 # golang stuff
 
-# add newer go directories to $PATH if they exist
+# Add newer go directories to $PATH if they exist
 if [ -d /usr/lib/go-1.10/bin ]; then
-        PATH="/usr/lib/go-1.10/bin:${PATH}"
-        export PATH
+        PATH="/usr/lib/go-1.10/bin:${GOPATH}/bin:${PATH}"
+	export PATH
 fi
 
-export GOPATH="${HOME}/go"
+# Set GOPATH if go is installed
+which go >/dev/null
+if [ $? -eq 0 ]; then
+	export GOPATH="${HOME}/go"
+	PATH="${GOPATH}/bin:${PATH}"
+	export PATH
+fi
 
