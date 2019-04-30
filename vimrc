@@ -44,11 +44,11 @@ au BufNewFile,BufRead *.nse,*.lua
     \ set shiftwidth=2 |
     \ set expandtab
 
-" C stuff
-au BufNewFile,BufRead *.c,*.h
+" C/C++ stuff
+au BufNewFile,BufRead *.cpp,*.c,*.h
     \ set syntax=c |
-    \ set softtabstop=2 |
-    \ set shiftwidth=2 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
     \ set expandtab |
     \ set autoindent
 
