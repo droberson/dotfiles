@@ -52,7 +52,7 @@ au BufNewFile,BufRead *.cpp,*.c,*.h
     \ set expandtab |
     \ set autoindent
 
-au BufRead,BufNewFile, *.c,*.h match BadWhitespace /\s\+$/
+au BufRead,BufNewFile, *.cpp,*.c,*.h match BadWhitespace /\s\+$/
 
 " golang stuff
 au BufRead,BufNewFile, *.go, match BadWhitespace /\s\+$/
