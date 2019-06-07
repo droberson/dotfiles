@@ -1,9 +1,16 @@
 ;; .emacs by Daniel Roberson (daniel @ planethacker . net)
 ;;
-;; This is going to be a perpetual work in progress!!! 
+;; This is going to be a perpetual work in progress!!!
 ;;
 
 ;; Start in daemon mode.
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (require 'server)
 (unless (server-running-p)
   (server-start))
@@ -86,6 +93,9 @@ print a message in the minibuffer with the result."
 (setq-default line-number-mode 't)
 (setq-default column-number-mode 't)
 
+;; highlight trailing quite space
+(setq-default show-trailing-whitespace 't)
+
 ;; OpenBSD style C indenting. Stole from emacswiki!
 ;; C-c . "openbsd" to get after it.
 (c-add-style "openbsd"
@@ -99,6 +109,9 @@ print a message in the minibuffer with the result."
 	       (arglist-cont-nonempty . 4)
 	       (inclass . 8)
 	       (knr-argdecl-intro . 8)))
+
+;; golang stuff
+(require 'go-mode)
 
 ;; Aliases
 (defalias 'fm 'flyspell-mode) ;; toggles flyspell mode
