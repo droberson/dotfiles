@@ -68,6 +68,7 @@
 ;; File name associations
 (add-to-list 'auto-mode-alist '("\\.elvi\\'" . sh-mode))  ;; Surfraw elvis
 (add-to-list 'auto-mode-alist '("\\.elvis\\'" . sh-mode)) ;; Surfraw elvis
+(add-to-list 'auto-mode-alist '("\\.nse\\'" . lua-mode))  ;; Nmap NSE
 
 ;; Calendar
 ;;(calendar)
