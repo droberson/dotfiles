@@ -25,6 +25,10 @@
 ;; Stop to show toolbar
 (if window-system (tool-bar-mode -1))
 
+;; Change color of modeline
+(set-face-background 'mode-line "Blue")
+(set-face-foreground 'mode-line "White")
+
 ;; Use mouse in xterms
 ;; TODO: make it recognize if in X, console, or xterm if possible
 (require 'xt-mouse)
