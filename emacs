@@ -137,6 +137,11 @@ print a message in the minibuffer with the result."
 ;; golang stuff
 (require 'go-mode)
 
+;; https://www.lemoda.net/emacs/go-tab-width/index.html
+(defun my-go-setup ()
+  (setq tab-width 4))
+(add-hook 'go-mode-hook 'my-go-setup)
+
 ;; Aliases
 (defalias 'fm 'flyspell-mode) ;; toggles flyspell mode
 
