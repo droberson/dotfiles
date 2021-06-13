@@ -62,6 +62,7 @@
 ;; org-mode stuff
 (require 'org-install)
 (setq org-log-done 'time)      ;; Timestamp on completion (C-c C-t)
+(require 'org-inlinetask)
 
 ;; Set default terminal
 (if (eq system-type 'gnu/linux)
@@ -155,3 +156,7 @@ print a message in the minibuffer with the result."
 (defadvice ansi-term (before shell-prompt)
   (interactive (list explicit-shell-file-name)))
 (ad-activate 'ansi-term)
+
+
+;; Alt key isnt working on linux for some reason
+(setq x-alt-keysym 'meta)
