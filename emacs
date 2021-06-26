@@ -1,7 +1,6 @@
-;; .emacs by Daniel Roberson (daniel @ planethacker . net)
+;; Daniel Roberson's .emacs
 ;;
-;; This is going to be a perpetual work in progress!!!
-;;
+
 
 ;; Start in daemon mode.
 
@@ -63,6 +62,9 @@
 (require 'org-install)
 (setq org-log-done 'time)      ;; Timestamp on completion (C-c C-t)
 (require 'org-inlinetask)
+;;;; https://orgmode.org/guide/Multi_002dstate-Workflow.html
+(setq org-todo-keywords
+      '((sequence "TODO" "IN PROGRESS" "|" "DONE")))
 
 ;; Set default terminal
 (if (eq system-type 'gnu/linux)
