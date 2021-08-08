@@ -54,6 +54,11 @@ fi
 # Strip comments
 alias nocomment="sed '/^\s*#/d'"
 
+# golang
+if [ -d "/usr/local/go" ]; then
+    PATH="$PATH:/usr/local/go/bin"
+fi
+
 # Teamviewer if it exists.
 if [ -x "/opt/teamviewer9/tv_bin/TeamViewer" ]; then
     alias teamviewer="/opt/teamviewer9/tv_bin/TeamViewer"
@@ -77,7 +82,7 @@ alias ret="echo $?"
 alias ipinfo="curl ipinfo.io"
 alias header="curl -I"
 
-# Fuck capslock
+# disable capslock
 #setxkbmap -option ctrl:nocaps
 #setxkbmap -option
 
