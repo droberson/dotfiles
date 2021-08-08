@@ -1,6 +1,8 @@
 ;; Daniel Roberson's .emacs
 ;;
 
+;; Add load path directory
+(add-to-list 'load-path "~/.emacs.d/lisp/")
 
 ;; Start in daemon mode.
 
@@ -136,6 +138,9 @@ print a message in the minibuffer with the result."
 
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
+;; yara-mode
+(require 'yara-mode)
+
 
 ;; golang stuff
 (require 'go-mode)
@@ -144,6 +149,7 @@ print a message in the minibuffer with the result."
 (defun my-go-setup ()
   (setq tab-width 4))
 (add-hook 'go-mode-hook 'my-go-setup)
+
 
 ;; Aliases
 (defalias 'fm 'flyspell-mode) ;; toggles flyspell mode
