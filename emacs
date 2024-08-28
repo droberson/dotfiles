@@ -150,6 +150,35 @@ print a message in the minibuffer with the result."
   (setq tab-width 4))
 (add-hook 'go-mode-hook 'my-go-setup)
 
+;; prettify some things https://dr-knz.net/a-tour-of-emacs-as-go-editor.html
+(add-hook
+ 'go-mode-hook
+ (lambda ()
+   (push '("error" . ?∇) prettify-symbols-alist)
+   (push '("err" . ?⊙) prettify-symbols-alist)
+   (push '("exists" . ?∃) prettify-symbols-alist)
+   (push '(":= range" . ?∈) prettify-symbols-alist)
+   (push '("ok" . ?✓) prettify-symbols-alist)
+   (push '("==" . ?≡) prettify-symbols-alist)
+   (push '(":=" . ?≔) prettify-symbols-alist)
+   (push '(">=" . ?≥) prettify-symbols-alist)
+   (push '("<=" . ?≤) prettify-symbols-alist)
+   (push '("<-" . ?←) prettify-symbols-alist)
+   (push '("!=" . ?≠) prettify-symbols-alist)
+   (push '("..." . ?…) prettify-symbols-alist)
+   (push '("nil" . ?∅) prettify-symbols-alist)
+   (push '("make" . ?&) prettify-symbols-alist)
+   (push '("new" . ?&) prettify-symbols-alist)
+   (push '("context.Context" . ?◇) prettify-symbols-alist)
+   (push '("ctx" . ?⋄) prettify-symbols-alist)
+   (push '("mu" . ?❢) prettify-symbols-alist)
+   (push '("&&" . ?∧) prettify-symbols-alist)
+   (push '("||" . ?∨) prettify-symbols-alist)
+   (push '("!" . ?¬) prettify-symbols-alist)
+   (push '("interface{}" . ?⋆) prettify-symbols-alist)
+   (push '("struct{}" . ?ε) prettify-symbols-alist)
+   ))
+(global-prettify-symbols-mode 't)
 
 ;; Aliases
 (defalias 'fm 'flyspell-mode) ;; toggles flyspell mode
@@ -159,6 +188,7 @@ print a message in the minibuffer with the result."
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(setq package-check-signature nil)
 
 ;; I use zsh, so stop asking me which program to use, ansi-term!
 (defadvice ansi-term (before shell-prompt)
@@ -168,3 +198,31 @@ print a message in the minibuffer with the result."
 
 ;; Alt key isnt working on linux for some reason
 (setq x-alt-keysym 'meta)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages '(## org-roam magit-section emacsql-sqlite)))
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+
+;; org-roam
+
+;;; This auto-updates the database for a nicer user experience
+(org-roam-db-autosync-mode)
+
+;;;
+(define-key minibuffer-local-completion-map (kbd "SPC") 'self-insert-command)
+
+(global-set-key (kbd "C-c n l") 'org-roam-buffer-toggle)
+(global-set-key (kbd "C-c n f") 'org-roam-node-find)
+(global-set-key (kbd "C-c n i") 'org-roam-node-insert)
+(global-set-key (kbd "C-c n d") 'org-roam-dailies-capture-today)
+(global-set-key (kbd "C-c n t") 'org-roam-tag-add)
